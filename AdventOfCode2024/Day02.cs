@@ -12,9 +12,11 @@ public class Day02(string filePath) : AdvenfOfCodeDay(filePath)
             {
                 reports.Add(Int32.Parse(report));
             }
+
             if (IsSafeReport(reports)) safeReports++;
         }
-        Console.WriteLine(safeReports);
+
+        Console.WriteLine($"Safe reports part 1: {safeReports}");
     }
 
     public override void Part2()
@@ -50,12 +52,11 @@ public class Day02(string filePath) : AdvenfOfCodeDay(filePath)
             if (madeSafeByRemoval) safeReports++;
         }
 
-        Console.WriteLine(safeReports);
+        Console.WriteLine($"Safe reports part 2: {safeReports}");
     }
-    
+
     private bool IsSafeReport(List<int> reports)
     {
-
         bool isUp;
         if (reports[0] < reports[1]) isUp = true;
         else if (reports[0] > reports[1]) isUp = false;
